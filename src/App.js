@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './App.scss';
+import {Routes,Route} from 'react-router-dom';
+import Home from './containers/home/index';
+import Contact from './containers/contact/index';
+import About from './containers/about/index';
+import Resume from './containers/resume/index';
+import Skills from './containers/skills/index';
+import Portfolio from './containers/portfolio/index';
+import Navbar from './components/nabvar';
 function App() {
+ 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* particle js */ }
+
+
+      {/* Navbar */}
+      <Navbar/>
+      {/* Main page content */}
+      <div className='App__main-page-content'>
+      <Routes>
+        <Route index path='/'  element={<Home/>}></Route>
+        <Route index path='/about'  element={<About/>}></Route>
+        <Route index path='/resume'  element={<Resume/>}></Route>
+        <Route index path='/skills'  element={<Skills/>}></Route>
+        <Route index path='/Portfolio'  element={<Portfolio/>}></Route>
+        <Route index path='/contact'  element={<Contact/>}></Route>
+      </Routes>
+      </div>  
     </div>
   );
 }
